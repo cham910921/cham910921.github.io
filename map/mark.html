@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>資訊框</title>
+        <title>有資訊框版本</title>
         <style>
             #map {
                 width:900px;
@@ -14,36 +14,35 @@
         
         <script type="text/javascript">
             function initMap() {
-            const location = { lat: 23.55858345988535, lng: 120.47197754406302 }; //緯度 與 經度 // 警衛室 23.55858345988535, 120.47197754406302
-            //display map
+            const location = { lat: 23.557318, lng: 120.4711628 };
             const map = new google.maps.Map(
                 document.getElementById("map"), {
                     center: location,
                     zoom: 17
                 }
             );
-            //marker
+            
             const marker = new google.maps.Marker({
                 position: location,
-                map: map,// use map
+                map: map,
                 title:'大吃商圈',
             });
             const marker1 = new google.maps.Marker({
                 position: { lat: 23.557318, lng: 120.471628 },
-                map: map,// use map
+                map: map,
                 title:'大吃商圈',
             });
-            //infowindow
+           
             var infowindow = new google.maps.InfoWindow({
-                content: '大吃商圈<hr>一條飲食街', //可以用html語言
-                minWidth: 500,//最小寬度
+                content: '大吃商圈<hr>一條飲食街', 
+                minWidth: 500,
             });
             var infowindow1 = new google.maps.InfoWindow({
-                content: '國立中正大學<hr>國立中正大學，簡稱中正大學、中正大、中正，一所位於臺灣嘉義縣民雄鄉的國立研究型大學，為臺灣綜合大學系統的成員。其設有文、理、社會科學、工、管理、法、教育七學院，並以社會科學、法學、電腦科學等領域見長。其中，法學院為臺灣南部地區的大學中最具規模者，與1940年於中國江西省成立之國立中正大學完全無關，並非在台復校的大學', 
-                maxWidth: 150,//最大寬度
+                content: '大吃美食街<hr>國立中正大學附近的學生飲食街', 
+                maxWidth: 150,
             });
-            // 監聽事件
-            marker.addListener('click', function() {//點選 marker 打開資訊視窗事件
+          
+            marker.addListener('click', function() {
                 infowindow.open(map,marker); 
             });
             marker1.addListener('click', function() {
@@ -55,8 +54,7 @@
         
 
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLM8UnSHpFjzusSDJRugQHJqZVhGJoCFs&callback=initMap"></script>
-
+       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLM8UnSHpFjzusSDJRugQHJqZVhGJoCFs&callback=initMap"></script>
 
     </body>
 </html>
